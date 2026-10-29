@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="File Explorer by LayerDevs" description="Organize, inspect, export, and back up Shopify files with a focused resource workspace.">
+  <section class="product-hero">
+    <div class="container">
+      <p class="eyebrow">File Explorer for Shopify</p>
+      <h1 class="display">Your store resources, in clearer order.</h1>
+      <p class="lede">File Explorer gives merchants a focused workspace for understanding and managing Shopify files—without replacing Shopify’s native file storage.</p>
+      <a class="button" href="mailto:support@layerdevs.com?subject=File%20Explorer%20question">Ask about File Explorer</a>
+    </div>
+  </section>
+
+  <section class="section demo-section">
+    <div class="container demo">
+      <aside>
+        <div class="demo-title">vFolders</div>
+        <div class="folder active">▣ All files <span>23</span></div>
+        <div class="folder">◇ Uncategorized <span>11</span></div>
+        <div class="demo-label">VFOLDERS</div>
+        <div class="folder">▰ Product launch <span>8</span></div>
+        <div class="folder nested">▰ Winter campaign <span>4</span></div>
+      </aside>
+      <div class="workspace">
+        <div class="toolbar"><span>Search files</span><b>All types</b><b>Refresh</b></div>
+        <div class="cards">
+          <div class="asset"><i class="visual v1"></i><strong>product-main.jpg</strong><small>Used by products</small></div>
+          <div class="asset"><i class="visual v2"></i><strong>campaign.avif</strong><small>In vFolder</small></div>
+          <div class="asset"><i class="visual v3"></i><strong>brand-guide.pdf</strong><small>Ready to export</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container feature-grid">
+      <article><span>01</span><h2>Organize with vFolders</h2><p>Create a separate organizational layer for your workflow. vFolders do not move, rename, or delete native Shopify folders or files.</p></article>
+      <article><span>02</span><h2>Understand resource usage</h2><p>Review file type, size, modification information, and supported Shopify usage references from one workspace.</p></article>
+      <article><span>03</span><h2>Export what matters</h2><p>Download selected files, a vFolder, or the current file collection as a ZIP while preserving the selected structure.</p></article>
+      <article><span>04</span><h2>Create downloadable backups</h2><p>Run asynchronous backup jobs and download completed archives from the task area. Backup restore is not currently provided.</p></article>
+    </div>
+  </section>
+
+  <section class="section distinction">
+    <div class="container distinction-grid">
+      <div><p class="eyebrow">Designed to be clear</p><h2>vFolders and Shopify folders are different.</h2></div>
+      <div><p>Shopify folders are native store resources managed by Shopify. File Explorer vFolders are app-managed groupings that help you organize the same files for internal workflows.</p><p>Removing or reorganizing a vFolder does not change the native Shopify folder structure. Actions that modify Shopify files are presented separately and require an explicit merchant action.</p></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .product-hero { padding: 100px 0 70px; }
+  .product-hero .button { margin-top: 24px; }
+  .demo-section { padding-top: 20px; }
+  .demo { display: grid; grid-template-columns: 250px 1fr; min-height: 430px; overflow: hidden; border: 1px solid var(--ink); border-radius: 24px; background: white; box-shadow: 10px 10px 0 var(--ink); }
+  aside { padding: 24px 16px; border-right: 1px solid var(--line); background: #faf9f5; }
+  .demo-title { margin: 0 10px 24px; font-size: 1.15rem; font-weight: 850; }
+  .demo-label { margin: 28px 10px 10px; color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .12em; }
+  .folder { display: flex; justify-content: space-between; margin: 3px 0; padding: 11px 12px; border-radius: 10px; color: #4d5766; font-size: .86rem; }
+  .folder.active { background: #e8edfb; color: var(--blue); font-weight: 800; }
+  .folder.nested { padding-left: 30px; }
+  .workspace { padding: 20px; }
+  .toolbar { display: flex; align-items: center; gap: 9px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  .toolbar span { flex: 1; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; color: #9ba1aa; }
+  .toolbar b { padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: .78rem; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding-top: 30px; }
+  .asset { min-width: 0; }
+  .asset strong, .asset small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .asset strong { margin: 11px 0 5px; font-size: .84rem; }
+  .asset small { color: #318454; }
+  .visual { display: block; aspect-ratio: 1.15; border: 1px solid var(--line); border-radius: 14px; }
+  .v1 { background: linear-gradient(145deg, #b9ead7 0 42%, #2557d6 42% 58%, #f7f4ec 58%); }
+  .v2 { background: radial-gradient(circle at 65% 35%, #ff8c69 0 14%, transparent 15%), linear-gradient(140deg, #152238 0 45%, #d7c8ff 45%); }
+  .v3 { background: linear-gradient(110deg, #fff 0 28%, #e9e3d5 28% 70%, #2557d6 70%); }
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+  .feature-grid article { padding: clamp(26px, 5vw, 52px); background: var(--surface); }
+  .feature-grid span { color: var(--blue); font-weight: 850; }
+  .feature-grid h2 { margin: 28px 0 12px; font-size: 1.7rem; }
+  .feature-grid p, .distinction p { color: var(--muted); line-height: 1.75; }
+  .distinction { background: var(--mint); }
+  .distinction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+  .distinction h2 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.04; letter-spacing: -.05em; }
+  @media (max-width: 760px) {
+    .demo { grid-template-columns: 1fr; }
+    aside { display: none; }
+    .cards, .feature-grid, .distinction-grid { grid-template-columns: 1fr; }
+    .toolbar b { display: none; }
+  }
+</style>

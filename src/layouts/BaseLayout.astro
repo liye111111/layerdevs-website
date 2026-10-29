@@ -1,0 +1,89 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f4ec" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="LayerDevs home">
+          <span class="brand-mark" aria-hidden="true">L</span>
+          <span>LayerDevs</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="/apps/file-explorer">File Explorer</a>
+          <a href="/support/file-explorer">Support</a>
+          <a href="mailto:support@layerdevs.com">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="/"><span class="brand-mark">L</span><span>LayerDevs</span></a>
+          <p>Independent software for focused commerce workflows.</p>
+        </div>
+        <div>
+          <strong>File Explorer</strong>
+          <a href="/apps/file-explorer">Product</a>
+          <a href="/support/file-explorer">Support</a>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <a href="/privacy/file-explorer">Privacy</a>
+          <a href="/terms/file-explorer">Terms</a>
+        </div>
+        <div>
+          <strong>Contact</strong>
+          <a href="mailto:support@layerdevs.com">support@layerdevs.com</a>
+          <span>Hangzhou, Zhejiang, China</span>
+        </div>
+      </div>
+      <div class="container copyright">© {new Date().getFullYear()} LayerDevs. Shopify is a trademark of Shopify Inc.</div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(217,213,201,.75); background: rgba(247,244,236,.88); backdrop-filter: blur(18px); }
+  .header-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 850; letter-spacing: -.02em; text-decoration: none; }
+  .brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px 4px 10px 4px; background: var(--blue); color: #fff; }
+  nav { display: flex; align-items: center; gap: 28px; }
+  nav a { color: #4f5969; font-size: .92rem; font-weight: 700; text-decoration: none; }
+  nav a:hover { color: var(--blue); }
+  .site-footer { padding: 64px 0 28px; border-top: 1px solid var(--line); background: #ebe7dc; }
+  .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 40px; }
+  .footer-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .footer-grid p, .footer-grid a, .footer-grid span { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.6; text-decoration: none; }
+  .footer-grid a:hover { color: var(--blue); }
+  .copyright { margin-top: 52px; padding-top: 20px; border-top: 1px solid var(--line); color: #7a8290; font-size: .8rem; }
+  @media (max-width: 760px) {
+    nav a:not(:last-child) { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid > div:first-child { grid-column: 1 / -1; }
+  }
+</style>

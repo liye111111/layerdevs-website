@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://layerdevs.com/sitemap-index.xml

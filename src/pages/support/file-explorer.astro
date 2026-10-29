@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="File Explorer Support — LayerDevs" description="Support and common questions for the File Explorer Shopify app.">
+  <section class="support-hero"><div class="container">
+    <p class="eyebrow">File Explorer support</p>
+    <h1 class="display">How can we help?</h1>
+    <p class="lede">Send us a message with your store domain, the action you were taking, and any visible error message. Do not include passwords, access tokens, or customer data.</p>
+    <a class="button" href="mailto:support@layerdevs.com?subject=File%20Explorer%20support">Email support@layerdevs.com</a>
+  </div></section>
+
+  <section class="section"><div class="container support-grid">
+    <aside><p class="eyebrow">Support details</p><dl><dt>Channel</dt><dd>Email</dd><dt>Languages</dt><dd>English, 简体中文, 日本語</dd><dt>Typical response</dt><dd>Within two business days</dd><dt>Region</dt><dd>Hangzhou, China</dd></dl></aside>
+    <div class="faq">
+      <p class="eyebrow">Common questions</p>
+      <details open><summary>What is a vFolder?</summary><p>A vFolder is an organizational grouping managed by File Explorer. It does not replace or modify Shopify’s native folder structure.</p></details>
+      <details><summary>What does Refresh do?</summary><p>Refresh reloads the current interface data. A resource scan requests a broader inventory update and can continue as a background task.</p></details>
+      <details><summary>How long is a download available?</summary><p>The task card shows the availability period for a generated download. Download important archives before that period ends.</p></details>
+      <details><summary>Can File Explorer restore a backup?</summary><p>Not currently. Backups can be downloaded as archives for independent retention; automated restoration into Shopify is not yet provided.</p></details>
+      <details><summary>What should I include in a bug report?</summary><p>Include the store domain, approximate time, browser, steps to reproduce, and a screenshot if useful. Remove sensitive information before sending.</p></details>
+    </div>
+  </div></section>
+</BaseLayout>
+
+<style>
+  .support-hero { padding: 100px 0 70px; border-bottom: 1px solid var(--line); }
+  .support-hero .button { margin-top: 26px; }
+  .support-grid { display: grid; grid-template-columns: 300px 1fr; gap: 80px; }
+  aside { align-self: start; padding: 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
+  dl { margin: 0; }
+  dt { margin-top: 20px; color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  dd { margin: 6px 0 0; font-weight: 700; }
+  details { border-top: 1px solid var(--line); }
+  details:last-child { border-bottom: 1px solid var(--line); }
+  summary { padding: 23px 0; cursor: pointer; font-size: 1.15rem; font-weight: 800; }
+  details p { max-width: 680px; margin: -5px 0 24px; color: var(--muted); line-height: 1.7; }
+  @media (max-width: 760px) { .support-grid { grid-template-columns: 1fr; gap: 40px; } }
+</style>
